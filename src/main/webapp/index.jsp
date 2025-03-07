@@ -191,7 +191,7 @@
 <section id="contact">
     <h2>Contact Us</h2>
     <div class="contact-form">
-        <h3>Get in Touch</h3>
+        <h3>Get in Touch</h3> 
         <form action="#" method="post">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
