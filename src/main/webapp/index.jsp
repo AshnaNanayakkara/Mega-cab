@@ -182,9 +182,9 @@
 <section id="help" style="background-color: #f4f4f4; padding: 40px; text-align: center;">
     <h2>Need Help?</h2>
     <p>If you need assistance, you can reach out to us at any time. We are here to ensure a smooth experience with Mega Cab.</p>
-    <p>For immediate support, please call us at 1-800-123-4567 or email us at support@megacab.com.</p>
-    <button class="button" onclick="window.location.href='mailto:support@megacab.com'">📞 Contact Us Immediately</button>
-    <button class="button" onclick="window.location.href='index.html'">← Back to Home</button>
+    <p>For immediate support, please call us at +94 766065327 or email us at support@megacab.com.</p>
+    <button class="button" onclick="window.location.href='mailto:support@megacab.com'"> 📞 Contact Us Immediately</button>
+    <button class="button" onclick="window.location.href='index.html'"> ← Back to Home</button>
 </section>
 
 <!-- Contact Us Section -->
