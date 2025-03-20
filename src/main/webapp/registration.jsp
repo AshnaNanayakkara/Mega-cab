@@ -7,100 +7,60 @@
 <title>Sign Up</title>
 
 <!-- Font Icon -->
-<link rel="stylesheet"
-	href="fonts/material-icon/css/material-design-iconic-font.min.css">
-
-<!-- Main css -->
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
 </head>
-<body>
-
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 <input type="hidden" id="status" value="<%= request.getAttribute("status") %>">
 
-	<div class="main">
+<div class="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
+    <h2 class="text-2xl font-semibold text-center text-gray-700 mb-4">Sign Up</h2>
+    <form method="post" action="register" class="space-y-4">
+        <div class="flex items-center border border-gray-300 rounded-lg p-2">
+            <i class="zmdi zmdi-account text-gray-500 mr-2"></i>
+            <input type="text" name="name" id="name" placeholder="Your Name" class="w-full focus:outline-none"/>
+        </div>
+        <div class="flex items-center border border-gray-300 rounded-lg p-2">
+            <i class="zmdi zmdi-email text-gray-500 mr-2"></i>
+            <input type="email" name="email" id="email" placeholder="Your Email" class="w-full focus:outline-none"/>
+        </div>
+        <div class="flex items-center border border-gray-300 rounded-lg p-2">
+            <i class="zmdi zmdi-phone text-gray-500 mr-2"></i>
+            <input type="text" name="contact" id="contact" placeholder="Contact No" class="w-full focus:outline-none"/>
+        </div>
+        <div class="flex items-center border border-gray-300 rounded-lg p-2">
+            <i class="zmdi zmdi-city text-gray-500 mr-2"></i>
+            <input type="text" name="address" id="address" placeholder="Address" class="w-full focus:outline-none"/>
+        </div>
+        <div class="flex items-center border border-gray-300 rounded-lg p-2">
+            <i class="zmdi zmdi-card text-gray-500 mr-2"></i>
+            <input type="text" name="nic" id="nic" placeholder="NIC" class="w-full focus:outline-none"/>
+        </div>
+        <div class="flex items-center border border-gray-300 rounded-lg p-2">
+            <i class="zmdi zmdi-lock text-gray-500 mr-2"></i>
+            <input type="password" name="pass" id="pass" placeholder="Password" class="w-full focus:outline-none"/>
+        </div>
+        <div class="flex items-center border border-gray-300 rounded-lg p-2">
+            <i class="zmdi zmdi-lock-outline text-gray-500 mr-2"></i>
+            <input type="password" name="re_pass" id="re_pass" placeholder="Repeat Password" class="w-full focus:outline-none"/>
+        </div>
+        <div class="flex items-center">
+            <input type="checkbox" name="agree-term" id="agree-term" class="mr-2"/> 
+            <label for="agree-term" class="text-gray-600">I agree to the <a href="#" class="text-blue-500">Terms of Service</a></label>
+        </div>
+        <button type="submit" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition">Register</button>
+    </form>
+    <p class="text-center text-gray-600 mt-4">Already have an account? <a href="login.jsp" class="text-blue-500">Sign in</a></p>
+</div>
 
-		<!-- Sign up form -->
-		<section class="signup">
-			<div class="container">
-				<div class="signup-content">
-					<div class="signup-form">
-						<h2 class="form-title">Sign up</h2>
-					
-						<form method="post" action="register" class="register-form"
-							id="register-form">
-							<div class="form-group">
-								<label for="name"><i
-									class="zmdi zmdi-account material-icons-name"></i></label> <input
-									type="text" name="name" id="name" placeholder="Your Name" />
-							</div>
-							<div class="form-group">
-								<label for="email"><i class="zmdi zmdi-email"></i></label> <input
-									type="email" name="email" id="email" placeholder="Your Email" />
-							</div>
-								<div class="form-group">
-								<label for="contact"><i class="zmdi zmdi-phone"></i></label>
-								<input type="text" name="contact" id="contact"
-									placeholder="Contact no" />
-							</div>
-							<div class="form-group">
-								<label for="address"><i class="zmdi zmdi-city"></i></label>
-								<input type="text" name="address" id="address"
-									placeholder="Address" />
-							</div>
-							
-							<div class="form-group">
-								<label for="nic"><i class="zmdi zmdi-card"></i></label>
-								<input type="text" name="nic" id="nic"
-									placeholder="Nic" />
-							</div>
-							<div class="form-group">
-								<label for="pass"><i class="zmdi zmdi-lock"></i></label> <input
-									type="password" name="pass" id="pass" placeholder="Password" />
-							</div>
-							<div class="form-group">
-								<label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-								<input type="password" name="re_pass" id="re_pass"
-									placeholder="Repeat your password" />
-							</div>
-							<div class="form-group">
-								<input type="checkbox" name="agree-term" id="agree-term"
-									class="agree-term" /> <label for="agree-term"
-									class="label-agree-term"><span><span></span></span>I
-									agree all statements in <a href="#" class="term-service">Terms
-										of service</a></label>
-							</div>
-							<div class="form-group form-button">
-								<input type="submit" name="signup" id="signup"
-									class="form-submit" value="Register" />
-							</div>
-						</form>
-					</div>
-					<div class="signup-image">
-						<figure>
-							<img src="images/signup-image.jpg" alt="sing up image">
-						</figure>
-						<a href="login.jsp" class="signup-image-link">I am already
-							member</a>
-					</div>
-				</div>
-			</div>
-		</section>
-
-
-	</div>
-	<!-- JS -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="js/main.js"></script>
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<link rel="stylesheet" href="alert/dist/sweetalert.css">
-	
-	<script type="text/javascript">
-	
-	var status = document.getElementById("status").value;
-	if(status == "success"){
-		swal("Congrats","Account Created Successfully","success");
-	}
-	</script>
-
+<!-- JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    var status = document.getElementById("status").value;
+    if(status == "success"){
+        swal("Congrats", "Account Created Successfully", "success");
+    }
+</script>
 </body>
 </html>

@@ -121,8 +121,7 @@
         <div class="card">
             <h2>Manage Users</h2>
             <button onclick="window.location.href='viewUsers'">View Users</button>
-            <button onclick="alert('Banning a user!')">Ban User</button>
-            <button onclick="alert('Removing a customer!')">Remove Customer</button>
+            <button onclick="window.location.href='manageUsers'">Remove Customer</button>
         </div>
     </div>
 </body>

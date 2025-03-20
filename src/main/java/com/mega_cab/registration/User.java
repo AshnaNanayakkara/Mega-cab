@@ -41,4 +41,3 @@ public class User {
     public void setNic(String nic) { this.nic = nic; }
 
 }
-

@@ -1,7 +1,7 @@
 <%
-	if(session.getAttribute("name")==null){
-		response.sendRedirect("login.jsp");
-	}
+    if(session.getAttribute("name") == null){
+        response.sendRedirect("login.jsp");
+    }
 %>
 
 <!DOCTYPE html>
@@ -9,7 +9,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mega Cab - Taxi Service</title>
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -17,32 +16,34 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f8f9fa;
         }
         header {
             background-color: #333;
             color: white;
-            padding: 10px 0;
+            padding: 15px;
             text-align: center;
         }
         nav {
             display: flex;
-            justify-content: center; /* Center items horizontally */
-            align-items: center; /* Center items vertically */
+            justify-content: center;
             background-color: #444;
             position: sticky;
             top: 0;
             z-index: 1000;
+            padding: 10px 0;
         }
         nav a {
             color: white;
-            padding: 14px 20px;
+            padding: 12px 20px;
             text-decoration: none;
             text-align: center;
+            font-weight: bold;
         }
         nav a:hover {
-            background-color: #ddd;
+            background-color: #ff9800;
             color: black;
+            border-radius: 5px;
         }
         .user-name {
             background-color: #f39c12;
@@ -52,39 +53,35 @@
             font-weight: bold;
             text-decoration: none;
             margin-left: 20px;
-            text-align: center;  /* Ensures text is centered within the element */
-        }
-        .user-name:hover {
-            background-color: #e67e22;
         }
         .hero-section {
-            background: url('./images/cover.jpg') no-repeat center center/cover;
+            background: url('./assets/cover.jpg') no-repeat center center/cover;
             height: 600px;
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
             text-align: center;
-            background-size: cover;
-            background-position: center;
+            flex-direction: column;
         }
         .hero-section h1 {
-            font-size: 60px;
+            font-size: 50px;
             margin: 0;
         }
         .hero-section p {
-            font-size: 20px;
+            font-size: 22px;
+            margin-bottom: 20px;
         }
         .book-ride-btn {
             background-color: #f39c12;
             color: white;
             padding: 15px 30px;
-            font-size: 18px;
+            font-size: 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
-            margin-top: 20px;
+            transition: 0.3s;
         }
         .book-ride-btn:hover {
             background-color: #e67e22;
@@ -100,16 +97,8 @@
             margin: 15px;
             background-color: #e3e3e3;
             padding: 20px;
-            box-sizing: border-box;
-        }
-        .service-item h3 {
-            margin-top: 0;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .contact-form {
             background-color: #fff;
@@ -138,30 +127,31 @@
         .contact-form button:hover {
             background-color: #444;
         }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
     </style>
 </head>
 <body>
-
 <header>
     <h1>Mega Cab</h1>
     <p>Your Trusted Taxi Service</p>
 </header>
-
 <nav>
     <a href="#home">Home</a>
     <a href="#services">Services</a>
     <a href="#contact">Contact</a>
     <a href="#help">Help</a>
-    <a href="logout" class="user-name"><%=session.getAttribute("name")%></a> <!-- User's name with special styling -->
+    <a href="logout" class="user-name"><%=session.getAttribute("name")%></a>
 </nav>
-
 <div class="hero-section">
-    <div>
-        <h1>Fast and Reliable Taxi Service</h1>
-        <p>Ride with comfort and safety at Mega Cab</p>
-    </div>
+    <h1>Fast and Reliable Taxi Service</h1>
+    <p>Ride with comfort and safety at Mega Cab</p>
+    <a href="booking.jsp" class="book-ride-btn">Book a Ride</a>
 </div>
-
 <section id="services" class="services">
     <h2>Our Services</h2>
     <div class="service-item">
@@ -177,21 +167,9 @@
         <p>We are available around the clock for your transportation needs.</p>
     </div>
 </section>
-
-<!-- Help Section -->
-<section id="help" style="background-color: #f4f4f4; padding: 40px; text-align: center;">
-    <h2>Need Help?</h2>
-    <p>If you need assistance, you can reach out to us at any time. We are here to ensure a smooth experience with Mega Cab.</p>
-    <p>For immediate support, please call us at +94 766065327 or email us at support@megacab.com.</p>
-    <button class="button" onclick="window.location.href='mailto:support@megacab.com'"> 📞 Contact Us Immediately</button>
-    <button class="button" onclick="window.location.href='index.html'"> ← Back to Home</button>
-</section>
-
-<!-- Contact Us Section -->
 <section id="contact">
-    <h2>Contact Us</h2>
     <div class="contact-form">
-        <h3>Get in Touch</h3> 
+        <h3>Get in Touch</h3>
         <form action="#" method="post">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
@@ -200,10 +178,8 @@
         </form>
     </div>
 </section>
-
 <footer>
     <p>&copy; 2025 Mega Cab. All rights reserved.</p>
 </footer>
-
 </body>
 </html>
